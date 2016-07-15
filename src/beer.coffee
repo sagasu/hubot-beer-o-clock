@@ -18,7 +18,7 @@ beers = [
   "https://www.instagram.com/p/BG2SF3mpuZX/",
   "https://www.instagram.com/p/BG2FM_8pudY/",
   "https://www.instagram.com/p/BGui_K9puax/",
-  "https://www.instagram.com/p/BGm9NuNJuXU/",
+  "https://www.instagram.com/p/BGm9NuNJuXU/"
 ]
 
 cronJob = require('cron').CronJob
