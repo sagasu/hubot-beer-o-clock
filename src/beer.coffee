@@ -2,19 +2,6 @@
 #    beer me
 #
 # Commands:
-#   hubot beeroclock help - See a help document explaining how to use.
-#   hubot create beeroclock hh:mm - Creates a beeroclock at hh:mm every weekday for this room
-#   hubot create beeroclock hh:mm at location/url - Creates a beeroclock at hh:mm (UTC) every weekday for this chat room with a reminder for a physical location or url
-#   hubot create beeroclock Monday@hh:mm - Creates a beeroclock at hh:mm every Monday for this room
-#   hubot create beeroclock hh:mm UTC+2 - Creates a beeroclock at hh:mm every weekday for this room (relative to UTC)
-#   hubot create beeroclock Monday@hh:mm UTC+2 - Creates a beeroclock at hh:mm every Monday for this room (relative to UTC)
-#   hubot list beeroclocks - See all beeroclocks for this room
-#   hubot list all beeroclocks - See all beeroclocks in every room
-#   hubot delete beeroclock hh:mm - If you have a beeroclock on weekdays at hh:mm, delete it. Can also supply a weekday and/or UTC offset
-#   hubot delete all beeroclocks - Deletes all beeroclocks for this room.
-#
-# Author:
-#   sagasu
 #
 # Dependencies:
 #   underscore
@@ -39,12 +26,6 @@ _ = require('underscore')
 
 
 module.exports = (robot) ->
-  robot.respond /beer me/i, (msg) ->
-    msg.send msg.random beers
-
-  robot.respond /bitter me/i, (msg) ->
-    msg.send msg.random beers
-
   # Compares current time to the time of the beeroclock to see if it should be fired.
   beeroclockShouldFire = (beeroclock) ->
     beeroclockTime = beeroclock.time
@@ -233,6 +214,12 @@ module.exports = (robot) ->
   # Check for beeroclocks that need to be fired, once a minute
   # Monday to Friday.
   new cronJob('1 * * * * 1-5', checkbeeroclocks, null, true)
+
+  robot.respond /beer me/i, (msg) ->
+    msg.send msg.random beers
+
+  robot.respond /bitter me/i, (msg) ->
+    msg.send msg.random beers
 
   # Global regex should match all possible options
   robot.respond /(.*)beeroclocks? ?(?:([A-z]*)\s?\@\s?)?((?:[01]?[0-9]|2[0-4]):[0-5]?[0-9])?(?: UTC([- +]\d\d?))?(.*)/i, (msg) ->
