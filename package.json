@@ -1,0 +1,23 @@
+{
+  "name": "hubot-beer-o-clock",
+  "version": "1.0.0",
+  "description": "It is a beer time",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagasu/hubot-beer-o-clock.git"
+  },
+  "keywords": [
+    "hubot",
+    "beer"
+  ],
+  "author": "Mateusz Kopij <sagasu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sagasu/hubot-beer-o-clock/issues"
+  },
+  "homepage": "https://github.com/sagasu/hubot-beer-o-clock#readme"
+}
