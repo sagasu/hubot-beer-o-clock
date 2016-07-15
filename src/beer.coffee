@@ -2,6 +2,16 @@
 #    beer me
 #
 # Commands:
+#   hubot beeroclock help - See a help document explaining how to use.
+#   hubot create beeroclock hh:mm - Creates a beeroclock at hh:mm every weekday for this room
+#   hubot create beeroclock hh:mm at location/url - Creates a beeroclock at hh:mm (UTC) every weekday for this chat room with a reminder for a physical location or url
+#   hubot create beeroclock Monday@hh:mm - Creates a beeroclock at hh:mm every Monday for this room
+#   hubot create beeroclock hh:mm UTC+2 - Creates a beeroclock at hh:mm every weekday for this room (relative to UTC)
+#   hubot create beeroclock Monday@hh:mm UTC+2 - Creates a beeroclock at hh:mm every Monday for this room (relative to UTC)
+#   hubot list beeroclocks - See all beeroclocks for this room
+#   hubot list all beeroclocks - See all beeroclocks in every room
+#   hubot delete beeroclock hh:mm - If you have a beeroclock on weekdays at hh:mm, delete it. Can also supply a weekday and/or UTC offset
+#   hubot delete all beeroclocks - Deletes all beeroclocks for this room.
 #
 # Dependencies:
 #   underscore
