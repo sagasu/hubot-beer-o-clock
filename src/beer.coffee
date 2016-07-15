@@ -39,7 +39,7 @@ _ = require('underscore')
 
 
 module.exports = (robot) ->
-  robot.respond /bear me/i, (msg) ->
+  robot.respond /beer me/i, (msg) ->
     msg.send msg.random beers
 
   robot.respond /bitter me/i, (msg) ->
