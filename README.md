@@ -32,3 +32,9 @@ hubot>> beer
 user1>> hubot bitter me
 hubot>> beer
 ```
+
+## Credits
+
+
+The code hugely is taken from: hubot-standup-alarm  project:
+https://github.com/hubot-scripts/hubot-standup-alarm

@@ -1,5 +1,7 @@
 # Description:
 #    beer me
+#    The code hugely is taken from: hubot-standup-alarm  project:
+#    https://github.com/hubot-scripts/hubot-standup-alarm
 #
 # Commands:
 #   hubot beeroclock help - See a help document explaining how to use.
