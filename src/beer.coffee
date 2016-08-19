@@ -82,7 +82,7 @@ module.exports = (robot) ->
   # Fires the beeroclock message.
   dobeeroclock = (room) ->
     beeroclocks = getbeeroclocksForRoom(room)
-    beerurl = "https://www.instagram.com/p/BD-mYTgpuRb/"
+    beerurl = "https://github.com/sagasu/hubot-ttc-team-building/blob/master/img/IMG_1590.JPG?raw=true"
     beerMessage = ""
     if beeroclocks.length > 0
     # Do some magic here to loop through the beeroclocks and find the one for right now
