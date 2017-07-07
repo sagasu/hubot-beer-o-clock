@@ -25,12 +25,12 @@ beers = [
   "https://www.instagram.com/p/BHvERlgg_2Z/",
   "https://www.instagram.com/p/BHkKtwfgPHV/",
   "https://www.instagram.com/p/BHfBcxMAJHX/",
-  "https://www.instagram.com/p/BG9z4iMpuYR/",
-  "https://www.instagram.com/p/BG5Gyp0JuR0/",
-  "https://www.instagram.com/p/BG2SF3mpuZX/",
-  "https://www.instagram.com/p/BG2FM_8pudY/",
+  "https://www.instagram.com/p/BTzeB_ZhPnt/",
+  "https://www.instagram.com/p/BTzeUUchdmu/",
+  "https://www.instagram.com/p/BVFodYvBxv1/",
+  "https://www.instagram.com/p/BVJ-8uGB_fu/",
   "https://www.instagram.com/p/BGui_K9puax/",
-  "https://www.instagram.com/p/BGm9NuNJuXU/"
+  "https://www.instagram.com/p/BWQO1Pqhaa6/"
 ]
 
 cronJob = require('cron').CronJob
@@ -82,17 +82,19 @@ module.exports = (robot) ->
   # Fires the beeroclock message.
   dobeeroclock = (room) ->
     beeroclocks = getbeeroclocksForRoom(room)
-    #beerurl = "https://github.com/sagasu/hubot-ttc-team-building/blob/master/img/IMG_1590.JPG?raw=true"
     beerurl = "https://github.com/sagasu/hubot-beer-o-clock/blob/master/img/1.jpg?raw=true"
+
     beerMessage = ""
     if beeroclocks.length > 0
     # Do some magic here to loop through the beeroclocks and find the one for right now
       thebeeroclock = beeroclocks.filter(beeroclockShouldFire)
       message = "#{PREPEND_MESSAGE} #{_.sample(beeroclock_MESSAGES)} #{thebeeroclock[0].location}"
-      beerMessage = "#{PREPEND_MESSAGE} #{beerurl} #{thebeeroclock[0].location}"
+      msg.send msg.random houseParty
+      #beerMessage = "#{PREPEND_MESSAGE} #{beerurl} #{thebeeroclock[0].location}"
     else
       message = "#{PREPEND_MESSAGE} #{_.sample(beeroclock_MESSAGES)} #{beeroclocks[0].location}"
-      beerMessage = "#{PREPEND_MESSAGE} #{beerurl} #{beeroclocks[0].location}"
+      msg.send msg.random houseParty
+      #beerMessage = "#{PREPEND_MESSAGE} #{beerurl} #{beeroclocks[0].location}"
     robot.messageRoom room, message
     robot.messageRoom room, beerMessage
     return
